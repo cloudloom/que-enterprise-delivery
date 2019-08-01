@@ -1,0 +1,26 @@
+version: '3'
+services:
+  mysql:
+    image: mysql:5.7
+    ports:
+    - 30306:3306
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: vfxJjv8RktyBEEs
+  biserver:
+    image: zhicwu/biserver-ce:8.0-full
+    ports:
+      - "9090:8080"
+    security_opt:
+      - seccomp:unconfined
+    # https://fabiokung.com/2014/03/13/memory-inside-linux-containers/
+    #mem_limit: 5000M
+    #memswap_limit: 5000M
+    ulimits:
+      nproc: 65535
+      nofile:
+        soft: 65535
+        hard: 65535
+    restart: always
+    volumes:
+      - ./license/license.lic:/biserver-ce/pentaho-solutions/system/saiku/license.lic
