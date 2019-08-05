@@ -7,6 +7,8 @@ services:
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: vfxJjv8RktyBEEs
+    networks:
+      - que-ent_default
   biserver:
     image: zhicwu/biserver-ce:8.0-full
     ports:
@@ -24,3 +26,8 @@ services:
     restart: always
     volumes:
       - ./license/license.lic:/biserver-ce/pentaho-solutions/system/saiku/license.lic
+    networks:
+      - que-ent_default
+networks:
+  que-ent_default:
+    external: true
