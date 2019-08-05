@@ -46,6 +46,14 @@ services:
       SERVER_PASSWD: password
     networks:
       - que-ent_default
+    security_opt:
+      - seccomp:unconfined
+    ulimits:
+      nproc: 65535
+      nofile:
+        soft: 65535
+        hard: 65535
+    restart: always
 networks:
   que-ent_default:
     external: true
