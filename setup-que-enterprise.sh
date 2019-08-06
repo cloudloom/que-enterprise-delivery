@@ -34,7 +34,7 @@ echo "Installing Que Enterprise App"
 cd
 mkdir que-ent
 cd que-ent
-wget -q https://cloudloom.github.io/que-enterprise-delivery/app/v0.2/docker-compose.yml
+wget -O -q https://cloudloom.github.io/que-enterprise-delivery/app/v0.2/docker-compose.yml
 docker-compose up -d
 echo "Successfully Installed Que Enterprise App"
 #Create Docker-Compose Que Enterprise Reporting
@@ -42,8 +42,8 @@ echo "Installing Que Enterprise Reporting"
 cd
 mkdir que-ent-reporting
 cd que-ent-reporting
-wget -q https://cloudloom.github.io/que-enterprise-delivery/reporting/v0.2/docker-compose.yml
-wget -q https://cloudloom.github.io/que-enterprise-delivery/reporting/v0.2/license.lic -P license/
+wget -O -q https://cloudloom.github.io/que-enterprise-delivery/reporting/v0.2/docker-compose.yml
+wget -O -q https://cloudloom.github.io/que-enterprise-delivery/reporting/v0.2/license.lic -P license/
 docker-compose up -d
 echo "Successfully Installed Que Enterprise App"
 echo "Contact support@cloudloom.io for any assistance"
