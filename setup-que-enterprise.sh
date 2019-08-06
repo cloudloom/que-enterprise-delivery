@@ -1,4 +1,4 @@
-echo ""************ Setting Up Que Enterprise Server ************"
+echo "************ Setting Up Que Enterprise Server ************"
 echo "Powered by Cloudloom Labs"
 echo "Que Enterprise v0.0.5"
 echo "Mysql v5.7"
