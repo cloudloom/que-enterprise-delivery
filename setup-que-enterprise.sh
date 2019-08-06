@@ -1,4 +1,6 @@
+echo "----------------------------------------------------------"
 echo "************ Setting Up Que Enterprise Server ************"
+echo "----------------------------------------------------------"
 echo "Powered by Cloudloom Labs"
 echo "Que Enterprise v0.0.5"
 echo "Mysql v5.7"
@@ -45,6 +47,9 @@ cd que-ent-reporting
 wget -O -q https://cloudloom.github.io/que-enterprise-delivery/reporting/v0.2/docker-compose.yml
 wget -O -q https://cloudloom.github.io/que-enterprise-delivery/reporting/v0.2/license.lic -P license/
 docker-compose up -d
-echo "Successfully Installed Que Enterprise App"
+echo "Successfully Installed Que Enterprise Reporting"
 echo "Contact support@cloudloom.io for any assistance"
+echo "------------------------------------------------------------------"
 echo "************ Successfully Setup Que Enterprise Server ************"
+echo "------------------------------------------------------------------"
+
