@@ -7,6 +7,8 @@ services:
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: vfxJjv8RktyBEEs
+    volumes:
+      - ./mysql-data:/var/lib/mysql
     networks:
       - que-ent_default
   biserver:
