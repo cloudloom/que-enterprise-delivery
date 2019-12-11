@@ -8,7 +8,7 @@ echo "----- Rabbitmq v3-management"
 echo "----- Pentaho v8.0CE-FULL"
 echo "----- PDI Kettle v8.0CE-FULL"
 echo "----- Updating Linux Packages"
-sudo yum upgrade and yum update
+sudo yum -y upgrade and yum -y update
 echo "----- Installing wget"
 sudo yum -y install wget
 echo "----- Successfully Installed wget"
