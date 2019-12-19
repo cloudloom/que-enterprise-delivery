@@ -30,32 +30,6 @@ services:
       - ./license/license.lic:/biserver-ce/pentaho-solutions/system/saiku/license.lic
     networks:
       - que-ent_default
-  pdi:
-    image: zhicwu/pdi-ce:8.0-full
-    ports:
-      - "11011:11011"
-      - "12345:12345"
-    volumes:
-      - ./ext:/pdi-ext:ro
-      - ./data/logs:/data-integration/logs:rw
-      - ./data/cache:/data-integration/system/karaf/caches:rw
-      - ./data/data:/data-integration/system/karaf/data:rw
-      - ./data/tmp:/tmp:rw
-    environment:
-      #DEBUG: Y
-      PENTAHO_DI_JAVA_OPTIONS: '-javaagent:/usr/local/jmx_prometheus_javaagent.jar=12345:/dev/null -Xms1g -Xmx4g -XX:+UseG1GC -XX:+UseStringDeduplication -Djava.awt.headless=true -Dpentaho.karaf.root.transient=false -XX:ErrorFile=./logs/jvm_error.log -verbose:gc -Xloggc:./logs/gc.log -XX:+PrintGCDetails -XX:+PrintGCDateStamps -XX:+PrintHeapAtGC -XX:+PrintStringDeduplicationStatistics -XX:+UseGCLogFileRotation -XX:NumberOfGCLogFiles=2 -XX:GCLogFileSize=64M -XX:OnOutOfMemoryError=/usr/bin/oom_killer'
-      SERVER_USER: admin
-      SERVER_PASSWD: password
-    networks:
-      - que-ent_default
-    security_opt:
-      - seccomp:unconfined
-    ulimits:
-      nproc: 65535
-      nofile:
-        soft: 65535
-        hard: 65535
-    restart: always
 networks:
   que-ent_default:
     external: true
